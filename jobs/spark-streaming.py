@@ -8,8 +8,8 @@ from config.config import config
 
 def sentiment_analysis(comment) -> str:
     if comment:
-        openai.api_key = config["openai"]["api_key"]
-        completion = openai.ChatCompletion.create(
+        openai.api_key = config["OPENAI"]["api_key"]
+        completion = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {
