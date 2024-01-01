@@ -17,9 +17,9 @@ services:
       - "9090:8080"
       - "7077:7077"
     networks:
-      - code-with-yu
+      - private
 
-  spark-worker: &worker
+  spark-worker:
     container_name: spark-worker
     hostname: spark-worker
     build:
@@ -39,10 +39,10 @@ services:
       SPARK_WORKER_MEMORY: 1g
       SPARK_MASTER_URL: spark://spark-master:7077
     networks:
-      - code-with-yu
+      - private
 
 #  spark-worker-2:
 #    <<: *worker
 #
 networks:
-  code-with-yu:
+  private:
