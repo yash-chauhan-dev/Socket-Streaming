@@ -18,7 +18,6 @@ services:
       - "7077:7077"
     networks:
       - private
-
   spark-worker:
     container_name: spark-worker
     hostname: spark-worker
